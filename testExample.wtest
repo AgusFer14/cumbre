@@ -1,0 +1,31 @@
+import cumbre.*
+import conocimientos.*
+
+
+describe "group of tests for cumbre" {
+
+  const argentina = new Pais()
+  const brasil = new Pais()
+  const colombia = new Pais()
+  const coreaDelSur = new Pais()
+  const coreaDelNorte = new Pais()
+
+  const Juana = new Programador(pais=argentina,conocimientos= #{programacionBasica,css,html},commits=600)
+  const Lucia = new Programador(pais=brasil,conocimientos= #{programacionBasica,basesDeDatos},commits=800)
+  const Mariana = new Especialista(pais=argentina,conocimientos= #{programacionBasica,instalacionLinux,objetos,disenioConObjetos},commits=200)
+  const Susana = new Especialista(pais=colombia,conocimientos= #{programacionBasica,objetos},commits=1500)
+  
+  method initialize(){
+    cumbre.agregarPais(argentina)
+    cumbre.agregarPais(brasil)
+    cumbre.agregarPais(colombia)
+    cumbre.agregarPais(coreaDelSur)
+    cumbre.agregarPais(coreaDelNorte)
+    cumbre.registrarPersona(Juana)
+  }
+
+  test "pepita has initial energy" {
+    assert.equals(100, pepita.energy())
+  }
+
+}
